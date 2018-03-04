@@ -1,0 +1,28 @@
+version: '2'
+
+services:
+  nginx:
+    image: bitnami/nginx:1.10.2-r1
+    volumes:
+      - ./config/nginx:/bitnami/nginx/conf/vhosts
+    depends_on:
+      - backend
+    environment:
+      - VIRTUAL_HOST=yourproject.docker
+      - VIRTUAL_PORT=8080
+    ports:
+      - 8080:8080
+  db:
+    image: postgres:latest
+    environment:
+      - POSTGRES_USER=app
+      - POSTGRES_PASSWORD=password123
+      - POSTGRES_DB=backend_development
+  backend:
+    build: backend
+    depends_on:
+      - db
+    volumes:
+      - ./backend:/usr/src/app
+    ports:
+      - "3000:3000"
