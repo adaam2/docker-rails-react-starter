@@ -23,12 +23,17 @@ services:
     depends_on:
       - db
     volumes:
-      - ./backend:/usr/src/app
+      - ./backend:/usr/src/backend-app
     ports:
       - "3000:3000"
   frontend:
     build: frontend
+    volumes:
+      - '/frontend/src:/usr/src/frontend-app/src'
+      - '/frontend/public:/usr/src/frontend-app/public'
     ports:
+      - "35729:35729"
       - "4000:4000"
     environment:
       - REACT_APP_API_URL=http://localhost:3000
+      - CHOKIDAR_USEPOLLING=true
