@@ -1,17 +1,13 @@
-FROM node:latest
+FROM node:9.4.0
 
-ADD yarn.lock /yarn.lock
-ADD package.json /package.json
+WORKDIR /usr/src/frontend-app
 
-ENV NODE_PATH=/node_modules
-ENV PATH=$PATH:/node_modules/.bin
-RUN yarn
+COPY package*.json ./
 
-WORKDIR /app
-ADD . /app
+RUN npm install -qy
+
+COPY . .
 
 EXPOSE 3000
-EXPOSE 35729
 
-ENTRYPOINT ["/bin/bash", "/app/run.sh"]
-CMD ["start"]
+CMD ["npm", "start"]

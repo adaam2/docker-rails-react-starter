@@ -7,6 +7,7 @@ services:
       - ./config/nginx:/bitnami/nginx/conf/vhosts
     depends_on:
       - backend
+      - frontend
     environment:
       - VIRTUAL_HOST=yourproject.docker
       - VIRTUAL_PORT=8080
@@ -27,10 +28,14 @@ services:
     ports:
       - "3000:3000"
   frontend:
-    build: frontend
+    build:
+      context: ./frontend/
+    depends_on:
+      - backend
+    command: npm start
     volumes:
-      - '/frontend/src:/usr/src/frontend-app/src'
-      - '/frontend/public:/usr/src/frontend-app/public'
+      - ./frontend/:/usr/src/frontend-app
+      - /usr/src/frontend-app/node_modules
     ports:
       - "35729:35729"
       - "4000:4000"
