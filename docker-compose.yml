@@ -26,3 +26,9 @@ services:
       - ./backend:/usr/src/app
     ports:
       - "3000:3000"
+  frontend:
+    build: frontend
+    ports:
+      - "4000:4000"
+    environment:
+      - REACT_APP_API_URL=http://localhost:3000

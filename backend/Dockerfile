@@ -12,4 +12,8 @@ ADD Gemfile.lock /usr/src/app/Gemfile.lock
 RUN bundle install --jobs 20 --retry 5
 ADD . /usr/src/app
 EXPOSE 3000
+
+COPY ./docker-entrypoint.sh /usr/local/bin/
+
+ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["rails", "s", "-b", "0.0.0.0"]
