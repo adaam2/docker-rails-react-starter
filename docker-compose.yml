@@ -33,7 +33,7 @@ services:
     command: npm start
     volumes:
       - ./frontend/:/usr/src/frontend-app
-      - /usr/src/frontend-app/node_modules
+      - ./frontend/node_modules:/usr/src/frontend-app/node_modules
     ports:
       - "35729:35729"
     environment:
