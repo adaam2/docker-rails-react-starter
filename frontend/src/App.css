@@ -14,6 +14,10 @@
   color: white;
 }
 
+.Info {
+  margin: 50px auto;
+}
+
 .App-title {
   font-size: 1.5em;
 }
@@ -25,4 +29,15 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+code, pre {
+  background: #f2f2f2;
+  font-family: monospace;
+  margin: 15px auto;
+  display: inline-flex;
+  white-space: pre-line;
+  border-radius: 3px;
+  padding: 1rem;
+  min-width: 400px;
 }

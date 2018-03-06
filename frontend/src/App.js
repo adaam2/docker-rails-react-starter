@@ -7,13 +7,33 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
+          <img className="App-logo" src={logo} />
           <h1>
-            Hello world
+            Docker + React + Rails starter kit
           </h1>
         </header>
-        <p>
-          Build something cool!
-        </p>
+
+        <div className="Info">
+          <p>
+            Welcome to the starter kit!
+          </p>
+
+          <p>
+            Webpack configuration files are stored in:
+            <br />
+            <code>
+              /frontend/config
+            </code>
+          </p>
+
+          <p>
+            There is an api client class included in:
+            <br />
+            <code>
+              /frontend/shared
+            </code>
+          </p>
+        </div>
       </div>
     );
   }
