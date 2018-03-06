@@ -6,24 +6,28 @@ class ApiClient {
     this.baseUri = baseUri;
   }
 
-  get(path, params = {}) {
-    return request.get(this.requestUrl(path), params);
+  get(path, headers = {}, params = {}) {
+    return this.sendRequest('GET', path, params);
   }
 
-  post(path, body = {}) {
-    return request.post(this.requestUrl(path), body);
+  post(path, headers = {}, body = {}) {
+    return this.sendRequest('POST', path, body);
   }
 
-  delete(path, params = {}) {
-    return request.delete(this.requestUrl(path), params);
+  delete(path, headers = {}, params = {}) {
+    return this.sendRequest('DELETE', path, params);
   }
 
-  patch(path, body = {}) {
-    return request.patch(this.requestUrl(path), body);
+  patch(path, headers = {}, body = {}) {
+    return this.sendRequest('PATCH', path, body);
   }
 
   requestUrl(path) {
     return `${this.baseUri}/${path}`;
+  }
+
+  sendRequest(method, path, headers = {}, params = {}) {
+    return request(method, this.requestUrl(path), params).set(headers);
   }
 }
 
