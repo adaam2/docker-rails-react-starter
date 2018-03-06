@@ -1,3 +1,8 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+}
+
 .App {
   text-align: center;
 }
