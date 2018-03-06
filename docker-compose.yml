@@ -15,10 +15,11 @@ services:
       - 8080:8080
   db:
     image: postgres:latest
+    volumes:
+      - /backend/tmp/db:/var/lib/postgresql/data
     environment:
-      - POSTGRES_USER=app
-      - POSTGRES_PASSWORD=password123
-      - POSTGRES_DB=backend_development
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=secret
   backend:
     build: backend
     depends_on:
