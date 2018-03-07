@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect }  from 'react-redux';
 import { loadApp, checkApiStatus } from '../actions/app';
+import * as AppSelectors from '../selectors/app';
 
 // eslint-disable-next-line
 import styles from './app.css';
@@ -54,7 +55,7 @@ class App extends React.Component {
 
 export default connect((store, props) => {
   return {
-    loaded: store.app.loaded,
-    apiStatus: store.app.apiStatus
+    loaded: AppSelectors.getLoadedStatus(store),
+    apiStatus: AppSelectors.getApiStatus(store)
   };
 })(App);

@@ -2,7 +2,7 @@ import { ACTION_TYPES } from '../constants/action-types';
 
 const initialState = {
   loaded: false,
-  apiStatus: undefined
+  apiStatus: null
 };
 
 export default function app(state = initialState, action) {
