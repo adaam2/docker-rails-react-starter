@@ -18,8 +18,8 @@ const reducer = combineReducers({ app });
 
 const middlewares = [
   routerMiddleware(history),
-  logger,
-  thunk
+  thunk,
+  logger
 ];
 
 const store = compose(
