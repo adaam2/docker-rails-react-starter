@@ -58,6 +58,12 @@ Running migrations:
 docker-compose run backend rake db:migrate
 ```
 
+Killing the application (and remove data volumes):
+
+```
+docker-compose down --volumes
+```
+
 # Architecture
 
 The application can be built using `docker-compose up --build`.
