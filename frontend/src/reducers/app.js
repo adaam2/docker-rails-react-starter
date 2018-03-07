@@ -9,9 +9,9 @@ export default function app(state = initialState, action) {
   switch (action.type) {
     case ACTION_TYPES.APP_LOAD:
       return { ...state, loaded: true };
-    case ACTION_TYPES.STATUS_SUCCESS:
+    case ACTION_TYPES.API_STATUS_CHECK_SUCCESS:
       return { ...state, apiStatus: action.status }
-    case ACTION_TYPES.STATUS_FAILURE:
+    case ACTION_TYPES.API_STATUS_CHECK_FAILURE:
       return { ...state, apiStatus: "PROBLEMO" }
     default:
       return state;

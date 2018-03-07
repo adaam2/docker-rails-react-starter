@@ -9,14 +9,14 @@ export function loadApp() {
 
 function ApiSuccess(status) {
   return {
-    type: ACTION_TYPES.STATUS_SUCCESS,
+    type: ACTION_TYPES.API_STATUS_CHECK_SUCCESS,
     status
   }
 }
 
 function ApiFailure(err) {
   return {
-    type: ACTION_TYPES.STATUS_FAILURE,
+    type: ACTION_TYPES.API_STATUS_CHECK_FAILURE,
     err
   }
 }
