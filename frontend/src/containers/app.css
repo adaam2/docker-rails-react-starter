@@ -17,3 +17,15 @@ header {
 p {
   line-height: 1.5;
 }
+
+.StatusPill {
+  border-radius: 8px;
+  padding: 0.25rem 0.5rem;
+  width: 80px;
+  text-align: center;
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  background: green;
+  margin: auto 5px;
+}

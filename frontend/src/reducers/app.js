@@ -1,13 +1,18 @@
-import { APP_LOAD } from '../constants/action-types';
+import { ACTION_TYPES } from '../constants/action-types';
 
 const initialState = {
   loaded: false,
+  apiStatus: undefined
 };
 
 export default function app(state = initialState, action) {
   switch (action.type) {
-    case APP_LOAD:
+    case ACTION_TYPES.APP_LOAD:
       return { ...state, loaded: true };
+    case ACTION_TYPES.STATUS_SUCCESS:
+      return { ...state, apiStatus: action.status }
+    case ACTION_TYPES.STATUS_SUCCESS:
+      return { ...state, apiStatus: "BAD" }
     default:
       return state;
   }

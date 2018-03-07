@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect }  from 'react-redux';
-import { loadApp } from '../actions/app';
+import { loadApp, checkApiStatus } from '../actions/app';
 
 import styles from './app.css';
 
@@ -15,6 +15,7 @@ class App extends React.Component {
 
   componentDidMount() {
     this.props.dispatch(loadApp());
+    this.props.dispatch(checkApiStatus());
   }
 
   render() {
@@ -34,6 +35,12 @@ class App extends React.Component {
           <p>
             With redux, thunk actions, redux action logging
           </p>
+
+          <p>API Status:
+            <span className="StatusPill">
+              {this.props.apiStatus}
+            </span>
+          </p>
         </header>
 
         <main>
@@ -46,6 +53,7 @@ class App extends React.Component {
 
 export default connect((store, props) => {
   return {
-    loaded: store.app.loaded
+    loaded: store.app.loaded,
+    apiStatus: store.app.apiStatus
   };
 })(App);
