@@ -11,8 +11,8 @@ export default function app(state = initialState, action) {
       return { ...state, loaded: true };
     case ACTION_TYPES.STATUS_SUCCESS:
       return { ...state, apiStatus: action.status }
-    case ACTION_TYPES.STATUS_SUCCESS:
-      return { ...state, apiStatus: "BAD" }
+    case ACTION_TYPES.STATUS_FAILURE:
+      return { ...state, apiStatus: "PROBLEMO" }
     default:
       return state;
   }
