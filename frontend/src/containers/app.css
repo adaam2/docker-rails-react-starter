@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+header, main {
+  padding: 1rem;
+}
+
+header {
+  background: #333;
+  min-height: 100px;
+  color: #fff;
+}
+
+p {
+  line-height: 1.5;
+}

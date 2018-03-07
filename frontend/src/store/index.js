@@ -3,7 +3,7 @@ import { createBrowserHistory } from 'history';
 // Redux utility functions
 import { compose, createStore, combineReducers, applyMiddleware } from 'redux';
 import { routerMiddleware, connectRouter } from 'connected-react-router';
-import thunk from 'redux-thunk' // no changes here 😀
+import thunk from 'redux-thunk';
 
 // Import all reducers
 import app from '../reducers/app';

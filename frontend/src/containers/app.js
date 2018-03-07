@@ -2,6 +2,8 @@ import React from 'react';
 import { connect }  from 'react-redux';
 import { loadApp } from '../actions/app';
 
+import styles from './app.css';
+
 type Props = {
   dispatch: () => void,
   loaded: boolean,
@@ -25,14 +27,18 @@ class App extends React.Component {
     }
 
     return (
-      <div>
+      <div className="App">
         <header>
-          <h1>Hello world</h1>
+          <h1 className="Brand">React + Redux + Rails + Docker Compose</h1>
+
+          <p>
+            With redux, thunk actions, redux action logging
+          </p>
         </header>
 
-        <div>
+        <main>
           {this.props.children}
-        </div>
+        </main>
       </div>
     )
   }
