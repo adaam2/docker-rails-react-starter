@@ -3,8 +3,11 @@ import { createBrowserHistory } from 'history';
 // Redux utility functions
 import { compose, createStore, combineReducers, applyMiddleware } from 'redux';
 import { routerMiddleware, connectRouter } from 'connected-react-router';
+import thunk from 'redux-thunk' // no changes here 😀
+
 // Import all reducers
 import app from '../reducers/app';
+
 import logger from 'redux-logger';
 
 // Configure reducer to store state at state.router
@@ -15,7 +18,8 @@ const reducer = combineReducers({ app });
 
 const middlewares = [
   routerMiddleware(history),
-  logger
+  logger,
+  thunk
 ];
 
 const store = compose(
