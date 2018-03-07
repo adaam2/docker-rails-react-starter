@@ -2,6 +2,7 @@ import React from 'react';
 import { connect }  from 'react-redux';
 import { loadApp, checkApiStatus } from '../actions/app';
 
+// eslint-disable-next-line
 import styles from './app.css';
 
 type Props = {
