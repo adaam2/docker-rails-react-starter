@@ -80,7 +80,7 @@ docker-compose run backend rspec
 Running Jest (JS) specs:
 
 ```
-dc run frontend yarn test
+docker-compose run frontend yarn test
 ```
 
 # Architecture
