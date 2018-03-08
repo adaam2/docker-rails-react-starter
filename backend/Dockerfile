@@ -14,7 +14,8 @@ RUN bundle install --jobs 20 --retry 5
 ADD . /usr/src/backend-app
 EXPOSE 3000
 
-COPY ./docker-entrypoint.sh /usr/local/bin/
+COPY ./docker-entrypoint.sh /
+RUN chmod +x /docker-entrypoint.sh
 
-ENTRYPOINT ["docker-entrypoint.sh"]
+ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["rails", "s", "-b", "0.0.0.0"]
