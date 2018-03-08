@@ -1,3 +1,10 @@
+# Technologies
+- Docker compose
+- Postgresql
+- Nginx proxy
+- Ruby on Rails 5 (API only)
+- React + Redux + Redux Thunk + Reselect
+
 # Setup && running the application
 
 Before you run the application for the first time, you must create the database and run migrations:
