@@ -12,6 +12,8 @@ services:
     command: bundle exec sidekiq
     environment:
       REDIS_URL: redis://redis:6379/0
+    volumes:
+      - ./backend:/usr/src/backend-app
     depends_on:
       - db
       - redis
