@@ -71,6 +71,12 @@ Killing the application (and remove data volumes):
 docker-compose down --volumes
 ```
 
+Running RSpec tests:
+
+```
+docker-compose run backend rspec
+```
+
 # Architecture
 
 The application can be built using `docker-compose up --build`.
