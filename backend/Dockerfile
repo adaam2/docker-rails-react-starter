@@ -2,6 +2,7 @@ FROM ruby:2.3.3
 RUN apt-get update -qq && apt-get install -y --no-install-recommends build-essential libpq-dev
 RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+RUN gem install bundler
 
 RUN mkdir /usr/src/backend-app
 WORKDIR /usr/src/backend-app
