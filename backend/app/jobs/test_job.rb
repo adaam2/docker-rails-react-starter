@@ -1,5 +1,5 @@
 class TestJob < ApplicationJob
   def perform
-    Rails.logger.info "BOOBS"
+    # Do some work
   end
 end
