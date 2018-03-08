@@ -1,6 +1,20 @@
 version: '2'
 
 services:
+  redis:
+    image: redis
+    volumes:
+      - ./backend/tmp/redis:/data
+    ports:
+      - 6379:6379
+  worker:
+    build: backend
+    command: bundle exec sidekiq
+    environment:
+      REDIS_URL: redis://redis:6379/0
+    depends_on:
+      - db
+      - redis
   nginx:
     image: bitnami/nginx:1.10.2-r1
     volumes:
@@ -9,8 +23,8 @@ services:
       - backend
       - frontend
     environment:
-      - VIRTUAL_HOST=yourproject.docker
-      - VIRTUAL_PORT=8080
+      VIRTUAL_HOST: yourproject.docker
+      VIRTUAL_PORT: 8080
     ports:
       - 8080:8080
   db:
@@ -18,14 +32,19 @@ services:
     volumes:
       - /backend/tmp/db:/var/lib/postgresql/data
     environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=secret
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: secret
   backend:
     build: backend
     depends_on:
       - db
+      - redis
+      - worker
     volumes:
       - ./backend:/usr/src/backend-app
+    environment:
+      REDIS_URL: redis://redis:6379/0
+      SIDEKIQ_REDIS_URL: redis://redis:6379/1
   frontend:
     build:
       context: ./frontend/
@@ -37,6 +56,3 @@ services:
       - ./frontend/node_modules:/usr/src/frontend-app/node_modules
     ports:
       - "35729:35729"
-    environment:
-      - REACT_APP_API_URL=http://localhost:3000
-      - CHOKIDAR_USEPOLLING=true

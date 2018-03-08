@@ -11,8 +11,9 @@ gem 'puma', '~> 3.7'
 
 gem 'devise_token_auth'
 gem 'omniauth'
-gem 'hashie', '~> 3.5.7'
 gem 'redis'
+gem 'sidekiq'
+gem 'connection_pool'
 
 group :development, :test do
   gem 'pry'
