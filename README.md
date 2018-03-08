@@ -71,10 +71,16 @@ Killing the application (and remove data volumes):
 docker-compose down --volumes
 ```
 
-Running RSpec tests:
+Running backend RSpec tests:
 
 ```
 docker-compose run backend rspec
+```
+
+Running Jest (JS) specs:
+
+```
+dc run frontend yarn test
 ```
 
 # Architecture
