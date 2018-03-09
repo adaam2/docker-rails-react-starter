@@ -4,6 +4,7 @@
 - Nginx proxy
 - Ruby on Rails 5 (API only)
 - React + Redux + Redux Thunk + Reselect
+- Sidekiq in a Worker container.
 
 # Setup && running the application
 
