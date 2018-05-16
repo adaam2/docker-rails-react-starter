@@ -35,6 +35,10 @@ root@1c5e8aedd21a:/usr/src/backend-app# rake db:migrate
 == 20180306161431 DeviseTokenAuthCreateUsers: migrated (0.0497s) ==============
 ```
 
+## Docker on OS X
+
+If you are using Docker for Mac, you must setup the directory `/Users` to be able to be bind mounted into Docker containers by going to Docker for Mac preferences, and then File Sharing, and ensuring that `/Users` is listed there.
+
 Running the app (and navigate to `http://localhost:8080`):
 
 ```
