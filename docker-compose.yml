@@ -32,7 +32,7 @@ services:
   db:
     image: postgres:latest
     volumes:
-      - /backend/tmp/db:/var/lib/postgresql/data
+      - ./backend/tmp/db:/var/lib/postgresql/data
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: secret
