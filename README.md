@@ -39,6 +39,8 @@ root@1c5e8aedd21a:/usr/src/backend-app# rake db:migrate
 
 If you are using Docker for Mac, you must setup the directory `/Users` to be able to be bind mounted into Docker containers by going to Docker for Mac preferences, and then File Sharing, and ensuring that `/Users` is listed there.
 
+## Running
+
 Running the app (and navigate to `http://localhost:8080`):
 
 ```
