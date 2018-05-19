@@ -30,12 +30,15 @@ services:
     ports:
       - 8080:8080
   db:
-    image: postgres:latest
+    image: postgres
     volumes:
-      - ./backend/tmp/db:/var/lib/postgresql/data
+      - /var/lib/postgresql/data
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: secret
+      ALLOW_IP_RANGE: 0.0.0.0/0
+    ports:
+      - 54321:5432
   backend:
     build: backend
     depends_on:
