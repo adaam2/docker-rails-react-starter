@@ -76,7 +76,7 @@ GEM
     mini_portile2 (2.4.0)
     minitest (5.11.3)
     nio4r (2.3.0)
-    nokogiri (1.10.5)
+    nokogiri (1.10.8)
       mini_portile2 (~> 2.4.0)
     omniauth (1.8.1)
       hashie (>= 3.4.6, < 3.6.0)
